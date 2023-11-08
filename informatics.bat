@@ -14,8 +14,6 @@ echo .
 pause
 echo .
 
-rem powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
-
 rem Install Chocolatey
 powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 
@@ -23,11 +21,11 @@ rem By default you have to press Enter multiple times
 rem to give permission to install all of the applications.
 rem Enabling allowGlobalConfirmation it is no more required.
 choco feature enable -n=allowGlobalConfirmation
-pause
+rem pause
 
 echo Now chocolatey should be ready and we can go ahead
 echo .
-pause
+rem pause
 
 choco install arduino
 choco install eclipse
