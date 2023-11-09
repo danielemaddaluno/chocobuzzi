@@ -54,7 +54,6 @@ rem Install the chocolatey packages listed below
 choco install arduino
 choco install eclipse
 choco install androidstudio
-rem choco pin: see comment on top of this file
 choco install orwelldevcpp
 choco pin add -n=orwelldevcpp
 choco install vscode
@@ -70,7 +69,6 @@ choco install filezilla
 choco install mysql.workbench
 choco install xampp-81
 choco install notepadplusplus
-rem choco pin: see comment on top of this file
 choco install staruml2
 choco pin add -n=staruml2
 choco install projectlibre
@@ -85,6 +83,44 @@ choco install intellijidea-ultimate
 choco install clion-ide
 choco install pycharm
 choco install phpstorm
+
+:: Set the search path to the directory where the batch file is located
+setlocal enabledelayedexpansion
+set "searchPath=%~dp0"
+
+:: Set the search path to the directory where the batch file is located
+set "searchPath=%~dp0"
+
+:: Construct the full file path
+set "filePath=%searchPath%CiscoPacketTracer*.exe"
+:: Check if the file exists
+if exist "%filePath%" (
+    echo Found: %filePath%
+    "%filePath%" /VERYSILENT /NORESTART
+) else (
+    echo No matching file found for CiscoPacketTracer*.exe.
+)
+
+:: Construct the full file path
+set "filePath=%searchPath%Flowgorithm*.exe"
+:: Check if the file exists
+if exist "%filePath%" (
+    echo Found: %filePath%
+    "%filePath%" /quiet
+) else (
+    echo No matching file found for Flowgorithm*.exe.
+)
+
+:: Construct the full file path
+set "filePath=%searchPath%emu8086*.exe"
+:: Check if the file exists
+if exist "%filePath%" (
+    echo Found: %filePath%
+    "%filePath%" /SILENT
+) else (
+    echo No matching file found for emu8086*.exe.
+)
+
 
 echo To keep your system updated, run update_all.bat regularly from an administrator cmd.exe.
 echo .
