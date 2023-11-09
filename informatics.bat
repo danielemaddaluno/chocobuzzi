@@ -86,8 +86,6 @@ choco install phpstorm
 
 :: Set the search path to the directory where the batch file is located
 setlocal enabledelayedexpansion
-set "searchPath=%~dp0"
-
 :: Set the search path to the directory where the batch file is located
 set "searchPath=%~dp0"
 
