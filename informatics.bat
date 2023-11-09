@@ -66,13 +66,9 @@ choco install cygwin
 choco install advanced-port-scanner
 choco install wireshark
 choco install filezilla
-choco install mysql.workbench
 choco install xampp-81
 choco install notepadplusplus
-choco install staruml2
-choco pin add -n=staruml2
 choco install projectlibre
-choco install virtualbox
 choco install libreoffice-fresh
 choco install googlechrome
 choco install firefox
@@ -83,12 +79,17 @@ choco install intellijidea-ultimate
 choco install clion-ide
 choco install pycharm
 choco install phpstorm
+rem choco install mysql.workbench
+rem choco install virtualbox
 
 
-rem set "pwdPath=%~dp0"
-rem call "%pwdPath%nochoco/emu8086/emu8086.bat"
-rem call "%pwdPath%nochoco/flowgorithm/flowgorithm.bat"
-rem call "%pwdPath%nochoco/packet_tracer/packet_tracer.bat"
+set "pwdPath=%~dp0"
+start /wait cmd /c "%pwdPath%nochoco/emu8086/emu8086.bat"
+start /wait cmd /c "%pwdPath%nochoco/flowgorithm/flowgorithm.bat"
+start /wait cmd /c "%pwdPath%nochoco/packet_tracer/packet_tracer.bat"
+start /wait cmd /c "%pwdPath%nochoco/mysql_workbench/mysql_workbench.bat"
+start /wait cmd /c "%pwdPath%nochoco/staruml/staruml.bat"
+start /wait cmd /c "%pwdPath%nochoco/virtualbox/virtualbox.bat"
 
 
 echo To keep your system updated, run update_all.bat regularly from an administrator cmd.exe.
