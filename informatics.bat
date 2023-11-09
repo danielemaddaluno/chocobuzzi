@@ -84,40 +84,11 @@ choco install clion-ide
 choco install pycharm
 choco install phpstorm
 
-:: Set the search path to the directory where the batch file is located
-setlocal enabledelayedexpansion
-:: Set the search path to the directory where the batch file is located
-set "searchPath=%~dp0"
 
-:: Construct the full file path
-set "filePath=%searchPath%CiscoPacketTracer*.exe"
-:: Check if the file exists
-if exist "%filePath%" (
-    echo Found: %filePath%
-    "%filePath%" /VERYSILENT /NORESTART
-) else (
-    echo No matching file found for CiscoPacketTracer*.exe.
-)
-
-:: Construct the full file path
-set "filePath=%searchPath%Flowgorithm*.exe"
-:: Check if the file exists
-if exist "%filePath%" (
-    echo Found: %filePath%
-    "%filePath%" /quiet
-) else (
-    echo No matching file found for Flowgorithm*.exe.
-)
-
-:: Construct the full file path
-set "filePath=%searchPath%emu8086*.exe"
-:: Check if the file exists
-if exist "%filePath%" (
-    echo Found: %filePath%
-    "%filePath%" /SILENT
-) else (
-    echo No matching file found for emu8086*.exe.
-)
+rem set "pwdPath=%~dp0"
+rem call "%pwdPath%nochoco/emu8086/emu8086.bat"
+rem call "%pwdPath%nochoco/flowgorithm/flowgorithm.bat"
+rem call "%pwdPath%nochoco/packet_tracer/packet_tracer.bat"
 
 
 echo To keep your system updated, run update_all.bat regularly from an administrator cmd.exe.
