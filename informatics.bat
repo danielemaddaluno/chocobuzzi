@@ -79,19 +79,21 @@ choco install intellijidea-ultimate
 choco install clion-ide
 choco install pycharm
 choco install phpstorm
-rem choco install mysql.workbench
-rem choco install virtualbox
+choco install veyon
 
 
 set "pwdPath=%~dp0"
-start /wait cmd /c "%pwdPath%nochoco/emu8086/emu8086.bat"
-start /wait cmd /c "%pwdPath%nochoco/flowgorithm/flowgorithm.bat"
-start /wait cmd /c "%pwdPath%nochoco/packet_tracer/packet_tracer.bat"
-start /wait cmd /c "%pwdPath%nochoco/mysql_workbench/mysql_workbench.bat"
-start /wait cmd /c "%pwdPath%nochoco/staruml/staruml.bat"
-start /wait cmd /c "%pwdPath%nochoco/virtualbox/virtualbox.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_veyon_addons.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_emu8086.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_flowgorithm.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_packet_tracer.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_mysql_workbench.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_staruml.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_virtualbox.bat"
 
 
 echo To keep your system updated, run update_all.bat regularly from an administrator cmd.exe.
+echo .
+echo Batch file has completed successfully. Press any key to exit.
 echo .
 pause
