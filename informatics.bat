@@ -54,7 +54,6 @@ rem Install the chocolatey packages listed below
 choco install arduino
 choco install eclipse
 choco install androidstudio
-rem choco pin: see comment on top of this file
 choco install orwelldevcpp
 choco pin add -n=orwelldevcpp
 choco install vscode
@@ -67,14 +66,9 @@ choco install cygwin
 choco install advanced-port-scanner
 choco install wireshark
 choco install filezilla
-choco install mysql.workbench
 choco install xampp-81
 choco install notepadplusplus
-rem choco pin: see comment on top of this file
-choco install staruml2
-choco pin add -n=staruml2
 choco install projectlibre
-choco install virtualbox
 choco install libreoffice-fresh
 choco install googlechrome
 choco install firefox
@@ -85,7 +79,21 @@ choco install intellijidea-ultimate
 choco install clion-ide
 choco install pycharm
 choco install phpstorm
+choco install veyon
+
+
+set "pwdPath=%~dp0"
+start /wait cmd /c "%pwdPath%nochoco/install_veyon_addons.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_emu8086.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_flowgorithm.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_packet_tracer.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_mysql_workbench.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_staruml.bat"
+start /wait cmd /c "%pwdPath%nochoco/install_virtualbox.bat"
+
 
 echo To keep your system updated, run update_all.bat regularly from an administrator cmd.exe.
+echo .
+echo Batch file has completed successfully. Press any key to exit.
 echo .
 pause
