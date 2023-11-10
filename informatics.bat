@@ -79,10 +79,12 @@ choco install intellijidea-ultimate
 choco install clion-ide
 choco install pycharm
 choco install phpstorm
-choco install veyon
+rem choco install veyon
+rem choco install codeblocks
 
 
 set "pwdPath=%~dp0"
+start /wait cmd /c "%pwdPath%nochoco/install_veyon.bat"
 start /wait cmd /c "%pwdPath%nochoco/install_veyon_addons.bat"
 start /wait cmd /c "%pwdPath%nochoco/install_emu8086.bat"
 start /wait cmd /c "%pwdPath%nochoco/install_flowgorithm.bat"
