@@ -54,6 +54,7 @@ rem Install the chocolatey packages listed below
 choco install arduino
 choco install eclipse
 choco install androidstudio
+choco install codeblocks
 choco install orwelldevcpp
 choco pin add -n=orwelldevcpp
 choco install vscode
@@ -80,7 +81,6 @@ choco install clion-ide
 choco install pycharm
 choco install phpstorm
 rem choco install veyon
-rem choco install codeblocks
 
 
 set "pwdPath=%~dp0"
