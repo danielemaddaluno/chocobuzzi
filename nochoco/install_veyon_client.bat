@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
+:: https://docs.veyon.io/en/latest/admin/installation.html#examples
 :: Set the search path to the directory where the batch file is located
 set "searchPath=%~dp0"
 set "fileFound=false"

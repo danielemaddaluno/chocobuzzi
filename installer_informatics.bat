@@ -1,12 +1,12 @@
 @echo off
 
-rem This is a comment for below:
-rem Documentation of "choco pin": pin a package to suppress upgrades.
-rem This is especially helpful when running choco upgrade for all packages
-rem See https://docs.chocolatey.org/en-us/choco/commands/pin
+:: This is a comment for below:
+:: Documentation of "choco pin": pin a package to suppress upgrades.
+:: This is especially helpful when running choco upgrade for all packages
+:: See https://docs.chocolatey.org/en-us/choco/commands/pin
 
 
-rem Check if the script is run with administrative privileges
+:: Check if the script is run with administrative privileges
 net session >nul 2>&1
 if %errorlevel% neq 0 (
     echo The batch file has not been launched as administrator.
@@ -17,11 +17,11 @@ if %errorlevel% neq 0 (
     echo Batch file is running with administrator privileges.
     echo .
 )
-rem pause
-rem echo .
+:: pause
+:: echo .
 
 
-rem Ask confirmation to install chocolatey and tools
+:: Ask confirmation to install chocolatey and tools
 echo This script will first install chocolatey, then other tools.
 echo Browse https://chocolatey.org/packages for a list of available packages
 echo .
@@ -37,20 +37,20 @@ if /i "%user_input%"=="Y" (
 )
 
 
-rem Install Chocolatey
+:: Install Chocolatey
 powershell Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 
-rem By default you have to press Enter multiple times to give permission to install all of the applications.
-rem Enabling allowGlobalConfirmation the permission/confirmation will be given automatically.
+:: By default you have to press Enter multiple times to give permission to install all of the applications.
+:: Enabling allowGlobalConfirmation the permission/confirmation will be given automatically.
 choco feature enable -n=allowGlobalConfirmation
-rem pause
+:: pause
 
 echo Now chocolatey should be ready and we can go ahead
 echo .
-rem pause
+:: pause
 
 
-rem Select type of PC
+:: Select type of PC: student or teacher
 set /p pc_role=Install for a student PC? (Y/n) --> Y (Student), N (Teacher):
 if /i "%pc_role%"=="N" (
     echo Confirmed as teacher PC.
@@ -61,7 +61,7 @@ echo .
 
 
 
-rem Install the chocolatey packages listed below
+:: Install the chocolatey packages listed below
 choco install arduino
 choco install eclipse
 choco install androidstudio
@@ -91,7 +91,6 @@ choco install intellijidea-ultimate
 choco install clion-ide
 choco install pycharm
 choco install phpstorm
-rem choco install veyon
 
 
 set "pwdPath=%~dp0"
