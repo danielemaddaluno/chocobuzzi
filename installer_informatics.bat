@@ -51,7 +51,7 @@ rem pause
 
 
 rem Select type of PC
-set /p pc_role=Install for a student PC? (Y/n) ---> Y (Student), N (Teacher):
+set /p pc_role=Install for a student PC? (Y/n) --> Y (Student), N (Teacher):
 if /i "%pc_role%"=="N" (
     echo Confirmed as teacher PC.
 ) else (
@@ -95,13 +95,12 @@ rem choco install veyon
 
 
 set "pwdPath=%~dp0"
-start /wait cmd /c "%pwdPath%nochoco/install_veyon.bat"
-start /wait cmd /c "%pwdPath%nochoco/install_veyon_addons.bat"
 if /i "%pc_role%"=="N" (
-    veyon-cli config import "%pwdPath%nochoco/pc_client_config.json"
+    start /wait cmd /c "%pwdPath%nochoco/install_veyon_master.bat"
 ) else (
-    veyon-cli config import "%pwdPath%nochoco/pc_server_config.json"
+    start /wait cmd /c "%pwdPath%nochoco/install_veyon_client.bat"
 )
+start /wait cmd /c "%pwdPath%nochoco/install_veyon_addons.bat"
 start /wait cmd /c "%pwdPath%nochoco/install_emu8086.bat"
 start /wait cmd /c "%pwdPath%nochoco/install_emu8086_reg.bat"
 start /wait cmd /c "%pwdPath%nochoco/install_flowgorithm.bat"

@@ -8,8 +8,7 @@ set "fileFound=false"
 for %%f in ("%searchPath%veyon-[0-9]+-*.exe") do (
     set "filePath=%%f"
     echo Found: !filePath!
-    ::"!filePath!" /S /ApplyConfig="%searchPath%veyon-config.json"
-    "!filePath!" /S
+    "!filePath!" /S /ApplyConfig="%searchPath%pc_master_config.json"
     set "fileFound=true"
 )
 
