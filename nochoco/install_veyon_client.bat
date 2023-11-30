@@ -6,7 +6,7 @@ setlocal enabledelayedexpansion
 set "searchPath=%~dp0"
 set "fileFound=false"
 
-for %%f in ("%searchPath%veyon-[0-9]+-*.exe") do (
+for %%f in ("%searchPath%veyon-4*.exe") do (
     set "filePath=%%f"
     echo Found: !filePath!
     "!filePath!" /S /ApplyConfig="%searchPath%pc_client_config.json" /NoMaster
