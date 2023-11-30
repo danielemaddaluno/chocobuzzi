@@ -92,6 +92,7 @@ choco install intellijidea-ultimate
 choco install clion-ide
 choco install pycharm
 choco install phpstorm
+choco install datagrip
 
 
 set "pwdPath=%~dp0"
