@@ -21,6 +21,16 @@ if %errorlevel% neq 0 (
 :: echo .
 
 
+:: Select type of PC: student or teacher
+set /p pc_role="Install for a student PC? (Y/n) --> Y (Student), N (Teacher):"
+if /i "%pc_role%"=="N" (
+    echo Confirmed as teacher PC.
+) else (
+    echo Confirmed as student PC.
+)
+echo .
+
+
 :: Ask confirmation to install chocolatey and tools
 echo This script will first install chocolatey, then other tools.
 echo Browse https://chocolatey.org/packages for a list of available packages
@@ -49,15 +59,6 @@ echo Now chocolatey should be ready and we can go ahead
 echo .
 :: pause
 
-
-:: Select type of PC: student or teacher
-set /p pc_role="Install for a student PC? (Y/n) --> Y (Student), N (Teacher):"
-if /i "%pc_role%"=="N" (
-    echo Confirmed as teacher PC.
-) else (
-    echo Confirmed as student PC.
-)
-echo .
 
 
 
