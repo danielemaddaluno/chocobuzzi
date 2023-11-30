@@ -26,7 +26,7 @@ echo This script will first install chocolatey, then other tools.
 echo Browse https://chocolatey.org/packages for a list of available packages
 echo .
 
-set /p user_input=Do you want to continue? (Y/n):
+set /p user_input="Do you want to continue? (Y/n):"
 
 if /i "%user_input%"=="Y" (
     echo You confirmed. Proceeding with the operations.
@@ -51,7 +51,7 @@ echo .
 
 
 :: Select type of PC: student or teacher
-set /p pc_role=Install for a student PC? (Y/n) --> Y (Student), N (Teacher):
+set /p pc_role="Install for a student PC? (Y/n) --> Y (Student), N (Teacher):"
 if /i "%pc_role%"=="N" (
     echo Confirmed as teacher PC.
 ) else (
