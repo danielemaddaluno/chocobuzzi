@@ -98,8 +98,11 @@ choco install datagrip
 set "pwdPath=%~dp0"
 if /i "%pc_role%"=="N" (
     start /wait cmd /c "%pwdPath%nochoco/install_veyon_master.bat"
+    start /wait cmd /c "%pwdPath%nochoco/install_veyon_private_key.bat"
+    start /wait cmd /c "%pwdPath%nochoco/install_veyon_public_key.bat"
 ) else (
     start /wait cmd /c "%pwdPath%nochoco/install_veyon_client.bat"
+    start /wait cmd /c "%pwdPath%nochoco/install_veyon_public_key.bat"
 )
 start /wait cmd /c "%pwdPath%nochoco/install_veyon_addons.bat"
 start /wait cmd /c "%pwdPath%nochoco/install_emu8086.bat"
