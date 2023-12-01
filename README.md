@@ -25,5 +25,5 @@ they'll not be detected by the specific `.bat` auto installer.
 1. Right click on the specific `.bat` file and run as administrator.
 2. Chose `y` for a student PC, choose `n` for a teacher PC.
 3. Give a confirmation with a `y`.
-3. Wait the installation process to complete.
-4. That's all.
+4. Wait the installation process to complete.
+5. That's all.
