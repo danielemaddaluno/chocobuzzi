@@ -11,13 +11,19 @@ Download the following softwares and put them under the folder `nochoco`:
  - <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox-X.X.XX-XXXXXX-Win.exe</a>
  - <a href="https://github.com/veyon/veyon/releases" target="_blank">veyon-X.X.X-win64-setup-exe</a>
  - <a href="https://github.com/veyon/addons/releases" target="_blank">veyon-addons-X.X.X.X-win64-setup.exe</a>
- - emu8086vXXX_setup.exe
+ - add the veyon configurations file `pc_client_config.json` and `pc_server_config.json`
+   (export from the veyon configurator)
+ - add the veyon public/private keys `veyon_teacher_public_key.pem` and `veyon_teacher_private_key.pem`
+   (export from the veyon configurator from the `keys` section)
+ - `emu8086vXXX_setup.exe` (and add the `emu8086_reg.ini` license)
+
 
 The installers <ins>**must**</ins> follow the naming patterns shown in the list otherwise 
 they'll not be detected by the specific `.bat` auto installer.
 
 ## Instructions
 1. Right click on the specific `.bat` file and run as administrator.
-2. Give it a confirmation with a `y`.
+2. Chose `y` for a student PC, choose `n` for a teacher PC.
+3. Give a confirmation with a `y`.
 3. Wait the installation process to complete.
 4. That's all.
