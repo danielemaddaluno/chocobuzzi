@@ -6,11 +6,19 @@ setlocal enabledelayedexpansion
 set "searchPath=%~dp0"
 set "fileFound=false"
 
-for %%f in ("%searchPath%veyon-4*.exe") do (
-    set "filePath=%%f"
-    echo Found: !filePath!
-    "!filePath!" /S /ApplyConfig="%searchPath%pc_client_config.json" /NoMaster
-    set "fileFound=true"
+
+for %%f in ("%searchPath%veyon-*.exe") do (
+	set "filePath=%%f"
+    set "fileName=%%~nxf"
+
+    :: Check if "addons" is not present in the file name
+    echo !fileName! | find /i "addons" > nul
+    if errorlevel 1 (
+		echo FileName: !fileName!
+		echo FilePath: !filePath!
+        "!filePath!" /S /ApplyConfig="%searchPath%pc_client_config.json" /NoMaster
+        set "fileFound=true"
+    )
 )
 
 if not !fileFound! (
