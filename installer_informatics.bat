@@ -75,7 +75,6 @@ choco install r
 choco install r.studio
 choco install inkscape
 choco install git
-choco install cygwin
 choco install advanced-port-scanner
 choco install wireshark
 choco install filezilla
@@ -93,6 +92,7 @@ choco install clion-ide
 choco install pycharm
 choco install phpstorm
 choco install datagrip
+::choco install cygwin
 
 
 set "pwdPath=%~dp0"
